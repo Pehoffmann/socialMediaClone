@@ -8,8 +8,9 @@
     >
     <div class="mt-1">
       <input
+        @input="(event) => emits('update:modelValue', event.target.value)"
         :type="props.type"
-        :value="props.value"
+        :value="props.modelValue"
         :placeholder="props.placeholder"
         class="block px-4 w-full border-gray-300 rounded-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
@@ -18,8 +19,10 @@
 </template>
 
 <script setup>
+const emits = defineEmits(["update:modelValue"]);
+
 const props = defineProps({
-  value: {
+  modelValue: {
     type: String,
     required: true,
   },

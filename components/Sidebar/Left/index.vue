@@ -36,7 +36,7 @@
         <template #icon>
           <InboxIcon />
         </template>
-        <template #name> Messages </template>
+        <template #name> statusMessages </template>
       </SidebarLeftTab>
 
       <SidebarLeftTab>
